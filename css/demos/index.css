@@ -110,3 +110,30 @@
 }
 
 
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+/* PARPADEO */
+/* Definimos la animación de parpadeo */
+@keyframes parpadeo {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+  
+/* Estilo inicial del texto */
+.texto-parpadeante {
+	font-size: 30px;
+	font-weight: bold;
+	color: red;
+	opacity: 1; /* Asegurar que es visible inicialmente */
+}
+  
+/* La clase 'activo' activa el parpadeo */
+.activo {
+	animation: parpadeo 0.10s linear 3.5;
+}
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------- */

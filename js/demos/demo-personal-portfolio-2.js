@@ -49,3 +49,22 @@ Theme Version:  12.0.0
 })).apply( this, [ jQuery ]);
 
 
+/* -------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------- */
+/* PARPADEO */
+document.addEventListener("DOMContentLoaded", () => {
+	const texto = document.getElementById('texto');
+
+	// Configurar el Intersection Observer
+	const observer = new IntersectionObserver((entries, observer) => {
+	  entries.forEach(entry => {
+		if (entry.isIntersecting) {
+		  // Activar la animación al verlo
+		  texto.classList.add('activo');
+		  observer.unobserve(texto); // Dejar de observar después de la animación
+		}
+	  });
+	}, { threshold: 0.5 }); // Se activa cuando al menos el 50% del texto sea visible
+
+	observer.observe(texto); // Observar el texto
+  });
